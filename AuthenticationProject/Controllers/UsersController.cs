@@ -9,26 +9,14 @@ public class UsersController : Controller
 {
     #region Constructor
     private readonly UserManager<ApplicationUser> _userManager;
-    //private readonly RoleManager<ApplicationRole> _roleManager;
-    private readonly PasswordHasher<ApplicationUser> _passwordHasher;
-
-    public UsersController(PasswordHasher<ApplicationUser> passwordHasher)
-    {
-        _passwordHasher = passwordHasher;
-    }
-
-    private readonly PasswordValidator<ApplicationUser> _passwordValidator;
+    private readonly IPasswordValidator<ApplicationUser> _passwordValidator;
 
     public UsersController(
         UserManager<ApplicationUser> userManager,
-        //RoleManager<ApplicationRole> roleManager,
-        PasswordValidator<ApplicationUser> passwordValidator,
-        PasswordHasher<ApplicationUser> passwordHasher)
+        IPasswordValidator<ApplicationUser> passwordValidator)
     {
         this._userManager = userManager;
-        //this._roleManager = roleManager;
         this._passwordValidator = passwordValidator;
-        this._passwordHasher = passwordHasher;
     }
 
     #endregion
