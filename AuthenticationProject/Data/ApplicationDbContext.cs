@@ -10,4 +10,6 @@ public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         
     }
+
+public DbSet<AuthenticationProject.Models.ApplicationRole> ApplicationRole { get; set; } = default!;
 }

@@ -1,4 +1,6 @@
-﻿namespace AuthenticationProject.Dtos;
+﻿using AuthenticationProject.Models;
+
+namespace AuthenticationProject.Dtos;
 
 public class LoginUserDto
 {
@@ -25,4 +27,11 @@ public class EditRoleDto
     public string Name { get; set; }
     public string Email { get; set; }
     public DateTime? ExpiredDate { get; set; }
+}
+
+public class RoleDetailsDto
+{
+    public ApplicationRole? Role { get; set; }
+    public List<ApplicationUser>? Members { get; set; }
+    public List<ApplicationUser>? NonMembers { get; set; }
 }

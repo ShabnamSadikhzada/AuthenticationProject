@@ -1,0 +1,43 @@
+﻿@model RoleDetailsDto
+
+<div id="loading" class="d-none">
+    <div class="spinner-border" style="width:3rem; height:3rem;" role="status">
+        <span class="visually-hidden">Loading...</span>
+    </div>
+</div>
+
+
+<div class="row mt-5 shadow-sm p-5">
+    <div class="col-12 mb-3">
+        <h6 class="display-6">@Model.Role.Name</h6>
+    </div>
+
+    <div class="col-6">
+        <div class="card-header border-success">
+            In Role
+        </div>
+        <div class="card-body">
+            <ul class="list-group list-group-flush">
+                @foreach (var inRole in Model.Members)
+                {
+                    <li class="list-group-item">@inRole.Email</li>
+                }
+            </ul>
+        </div>
+    </div>
+
+
+    <div class="col-6">
+        <div class="card-header border-danger">
+            Not In Role
+        </div>
+        <div class="card-body">
+            <ul class="list-group list-group-flush">
+                @foreach (var inRole in Model.NonMembers)
+                {
+                    <li class="list-group-item">@inRole.Email</li>
+                }
+            </ul>
+        </div>
+    </div>
+</div> 
