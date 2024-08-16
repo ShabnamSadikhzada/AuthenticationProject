@@ -12,7 +12,7 @@
         <h6 class="display-6">@Model.Role.Name</h6>
     </div>
 
-    <div class="col=5.5">
+    <div class="col">
         <div class="card-header border-success">
             In Role
         </div>
@@ -20,22 +20,40 @@
             <ul class="list-group list-group-flush">
                 @foreach (var inRole in Model.Members)
                 {
-                    <li class="list-group-item">@inRole.Email</li>
+                    <li class="list-group-item">
+                        <div class="form-check">
+                            <input class="form-check-input in-role" type="checkbox" value="@inRole.Email" id="@inRole.Email">
+                            <label class="form-check-label" for="@inRole.Email">
+                                @inRole.Email
+                            </label>
+                        </div>
+                    </li>
                 }
             </ul>
         </div>
     </div>
+    <div class="col-auto">
+        <div class="d-flex flex-column align-items-center justify-content-center vh-90">
+            <button type="button" class="btn btn-outline-danger" onclick="getRoleEmails('in')">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                     class="bi bi-arrow-right" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                          d="M1.5 8a.5.5 0 0 1 .5-.5h11.293l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H2a.5.5 0 0 1-.5-.5z" />
+                </svg>
+            </button>
 
-    <div class="col=1">
-        <button>
-            <i class="fas fa-arrow-right"></i>
-        </button>
-        <button>
-            <i class="fas fa-arrow-left"></i>
-        </button>
+            <button type="button" class="btn btn-outline-success mt-5" onclick="getRoleEmails('not-in')">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                     class="bi bi-arrow-left" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                          d="M15 8a.5.5 0 0 1-.5.5H2.707l3.147 3.146a.5.5 0 0 1-.708.708l-4-4a.5.5 0 0 1 0-.708l4-4a.5.5 0 0 1 .708.708L2.707 7.5H14.5a.5.5 0 0 1 .5.5z" />
+                </svg>
+            </button>
+        </div>
     </div>
 
-    <div class="col=5.5">
+
+    <div class="col">
         <div class="card-header border-danger">
             Not In Role
         </div>
@@ -43,9 +61,48 @@
             <ul class="list-group list-group-flush">
                 @foreach (var inRole in Model.NonMembers)
                 {
-                    <li class="list-group-item">@inRole.Email</li>
+                    <li class="list-group-item">
+                        <div class="form-check">
+                            <input class="form-check-input not-in-role" type="checkbox" value="@inRole.Email" id="@inRole.Email">
+                            <label class="form-check-label" for="@inRole.Email">
+                                @inRole.Email
+                            </label>
+                        </div>
+                    </li>
                 }
             </ul>
         </div>
     </div>
-</div> 
+</div>
+
+
+@section js{
+    <script>
+        function getRoleEmails(prm){
+            var selectedEmails = [];
+            var checkboxes = document.querySelectorAll(`.${prm}-role:checked`);
+
+            checkboxes.forEach(function (checkbox) {
+                console.log(checkbox.value);
+                selectedEmails.push(checkbox.value);
+            });
+
+            let data = {
+                emails: selectedEmails,
+                roleId: '@Model.Role.Id'
+
+            };
+
+            fetch('/Roles/Edit', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            });
+
+        }
+
+    </script>
+
+}

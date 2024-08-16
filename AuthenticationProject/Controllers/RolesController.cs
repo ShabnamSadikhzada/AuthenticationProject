@@ -75,4 +75,10 @@ public class RolesController : Controller
         return View(dto);
     }
 
+    [HttpPost]
+    public async Task<IActionResult> Edit([FromBody] UserRoleEditDto dto)
+    {
+
+        return Json("");
+    }
 }

@@ -35,3 +35,9 @@ public class RoleDetailsDto
     public List<ApplicationUser>? Members { get; set; }
     public List<ApplicationUser>? NonMembers { get; set; }
 }
+
+public class UserRoleEditDto
+{
+    public string[] Emails { get; set; }
+    public int RoleId { get; set; }
+}
