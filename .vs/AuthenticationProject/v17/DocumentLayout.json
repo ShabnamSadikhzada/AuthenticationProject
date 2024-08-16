@@ -3,20 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\shabnamjs\\Desktop\\AuthenticationProject\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{04416920-5E1F-49C7-81B8-2031F2FBCC24}|AuthenticationProject\\AuthenticationProject.csproj|c:\\users\\shabnamjs\\desktop\\authenticationproject\\authenticationproject\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{04416920-5E1F-49C7-81B8-2031F2FBCC24}|AuthenticationProject\\AuthenticationProject.csproj|solutionrelative:authenticationproject\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{04416920-5E1F-49C7-81B8-2031F2FBCC24}|AuthenticationProject\\AuthenticationProject.csproj|c:\\users\\shabnamjs\\desktop\\authenticationproject\\authenticationproject\\views\\roles\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{04416920-5E1F-49C7-81B8-2031F2FBCC24}|AuthenticationProject\\AuthenticationProject.csproj|solutionrelative:authenticationproject\\views\\roles\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{04416920-5E1F-49C7-81B8-2031F2FBCC24}|AuthenticationProject\\AuthenticationProject.csproj|c:\\users\\shabnamjs\\desktop\\authenticationproject\\authenticationproject\\controllers\\rolescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{04416920-5E1F-49C7-81B8-2031F2FBCC24}|AuthenticationProject\\AuthenticationProject.csproj|solutionrelative:authenticationproject\\controllers\\rolescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{04416920-5E1F-49C7-81B8-2031F2FBCC24}|AuthenticationProject\\AuthenticationProject.csproj|c:\\users\\shabnamjs\\desktop\\authenticationproject\\authenticationproject\\dtos\\loginuserdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{04416920-5E1F-49C7-81B8-2031F2FBCC24}|AuthenticationProject\\AuthenticationProject.csproj|solutionrelative:authenticationproject\\dtos\\loginuserdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -31,53 +23,27 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\shabnamjs\\Desktop\\AuthenticationProject\\AuthenticationProject\\appsettings.json",
-              "RelativeDocumentMoniker": "AuthenticationProject\\appsettings.json",
-              "ToolTip": "C:\\Users\\shabnamjs\\Desktop\\AuthenticationProject\\AuthenticationProject\\appsettings.json",
-              "RelativeToolTip": "AuthenticationProject\\appsettings.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAACSAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-08-15T09:38:42.161Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
               "Title": "Edit.cshtml",
               "DocumentMoniker": "C:\\Users\\shabnamjs\\Desktop\\AuthenticationProject\\AuthenticationProject\\Views\\Roles\\Edit.cshtml",
               "RelativeDocumentMoniker": "AuthenticationProject\\Views\\Roles\\Edit.cshtml",
               "ToolTip": "C:\\Users\\shabnamjs\\Desktop\\AuthenticationProject\\AuthenticationProject\\Views\\Roles\\Edit.cshtml",
               "RelativeToolTip": "AuthenticationProject\\Views\\Roles\\Edit.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB8AAAAQAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAhAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-08-15T09:35:18.975Z",
+              "WhenOpened": "2024-08-16T05:32:50.222Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "LoginUserDto.cs",
-              "DocumentMoniker": "C:\\Users\\shabnamjs\\Desktop\\AuthenticationProject\\AuthenticationProject\\Dtos\\LoginUserDto.cs",
-              "RelativeDocumentMoniker": "AuthenticationProject\\Dtos\\LoginUserDto.cs",
-              "ToolTip": "C:\\Users\\shabnamjs\\Desktop\\AuthenticationProject\\AuthenticationProject\\Dtos\\LoginUserDto.cs",
-              "RelativeToolTip": "AuthenticationProject\\Dtos\\LoginUserDto.cs",
-              "ViewState": "AQIAAAoAAAAAAAAAAAAwwB8AAAAbAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-15T09:31:14.999Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "RolesController.cs",
               "DocumentMoniker": "C:\\Users\\shabnamjs\\Desktop\\AuthenticationProject\\AuthenticationProject\\Controllers\\RolesController.cs",
               "RelativeDocumentMoniker": "AuthenticationProject\\Controllers\\RolesController.cs",
               "ToolTip": "C:\\Users\\shabnamjs\\Desktop\\AuthenticationProject\\AuthenticationProject\\Controllers\\RolesController.cs",
               "RelativeToolTip": "AuthenticationProject\\Controllers\\RolesController.cs",
-              "ViewState": "AQIAABUAAAAAAAAAAAA4wD4AAAAMAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-15T09:22:26.474Z",
+              "WhenOpened": "2024-08-16T05:28:42.36Z",
               "EditorCaption": ""
             }
           ]
