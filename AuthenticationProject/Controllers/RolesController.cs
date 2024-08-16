@@ -2,7 +2,9 @@
 using AuthenticationProject.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.DotNet.Scaffolding.Shared.Messaging;
 using Microsoft.EntityFrameworkCore;
+using System.Net;
 
 namespace AuthenticationProject.Controllers;
 
@@ -78,7 +80,36 @@ public class RolesController : Controller
     [HttpPost]
     public async Task<IActionResult> Edit([FromBody] UserRoleEditDto dto)
     {
+        ApplicationRole _role = await _roleManager.FindByIdAsync(dto.RoleId);
+        IdentityResult result = new();
 
-        return Json("");
+        if(ModelState.IsValid)
+        {
+            foreach (string mail in dto.Emails)
+            {
+                var user = await _userManager.FindByEmailAsync(mail);
+
+                if (user != null)
+                {
+                    bool isInRole = await _userManager.IsInRoleAsync(user, _role.Name);
+
+                    if(isInRole)
+                    {
+                        result = await _userManager.RemoveFromRoleAsync(user, _role.Name);
+                    }
+                    else
+                    {
+                        result = await _userManager.AddToRoleAsync(user, _role.Name);
+                    }
+                }
+            }
+        }
+
+
+        return Json(new
+        {
+            StatusCode = result.Succeeded ? HttpStatusCode.OK : HttpStatusCode.BadRequest,
+            Messages = result.Succeeded ? new[] { "Success" } : result.Errors.Select(x => x.Description).ToArray()
+        });
     }
 }

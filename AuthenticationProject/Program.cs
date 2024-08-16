@@ -1,3 +1,4 @@
+using AuthenticationProject.Cryptography;
 using AuthenticationProject.Data;
 using AuthenticationProject.Models;
 using Microsoft.AspNetCore.Authentication.Cookies;
@@ -11,6 +12,12 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("default")));
 
+builder.Services.AddHttpContextAccessor();
+builder.Services.AddScoped<ApplicationDbContextFactory>();
+builder.Services.AddScoped<ICryptographyService, CryptographyService>();
+
+
+
 builder.Services.AddIdentity<ApplicationUser, ApplicationRole>(options =>
 {
     options.User.AllowedUserNameCharacters = "qwertyuiopasadfghjklzxcvbnmQWERTYUIIOPASDFGHJKLZXCVBNM1234567890";
@@ -23,6 +30,7 @@ builder.Services.AddIdentity<ApplicationUser, ApplicationRole>(options =>
     options.Password.RequireUppercase = true;
     options.Password.RequireNonAlphanumeric = true;
     // options.Password.RequiredUniqueChars = 1;
+    options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(5);
 })
     .AddEntityFrameworkStores<ApplicationDbContext>()
     .AddDefaultTokenProviders();
@@ -60,6 +68,6 @@ app.UseEndpoints(endpoints =>
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=roles}/{action=Index}/{id?}");
+    pattern: "{controller=roles}/{action=index}/{id?}");
 
 app.Run();

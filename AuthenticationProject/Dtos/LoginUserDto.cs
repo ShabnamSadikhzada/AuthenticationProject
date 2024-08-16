@@ -39,5 +39,5 @@ public class RoleDetailsDto
 public class UserRoleEditDto
 {
     public string[] Emails { get; set; }
-    public int RoleId { get; set; }
+    public string RoleId { get; set; }
 }
